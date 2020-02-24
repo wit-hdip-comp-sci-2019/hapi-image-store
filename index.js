@@ -6,6 +6,14 @@ const server = Hapi.server({
   port: process.env.PORT || 3000
 });
 
+const dotenv = require('dotenv');
+
+const result = dotenv.config();
+if (result.error) {
+  console.log(result.error.message);
+  process.exit(1);
+}
+
 async function init() {
   await server.register(require('@hapi/inert'));
   await server.register(require('@hapi/vision'));
