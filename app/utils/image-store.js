@@ -1,6 +1,9 @@
 'use strict';
 
 const cloudinary = require('cloudinary');
+const fs = require('fs');
+const util = require('util');
+const writeFile = util.promisify(fs.writeFile);
 
 const ImageStore = {
   configure: function() {
@@ -15,6 +18,11 @@ const ImageStore = {
   getAllImages: async function() {
     const result = await cloudinary.v2.api.resources();
     return result.resources;
+  },
+
+  uploadImage: async function(imagefile) {
+    await writeFile('./public/temp.img', imagefile);
+    await cloudinary.uploader.upload('./public/temp.img');
   }
 };
 
