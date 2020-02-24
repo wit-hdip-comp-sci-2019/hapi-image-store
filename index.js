@@ -1,5 +1,5 @@
 'use strict';
-
+const ImageStore = require('./app/utils/image-store');
 const Hapi = require('@hapi/hapi');
 
 const server = Hapi.server({
@@ -7,6 +7,12 @@ const server = Hapi.server({
 });
 
 const dotenv = require('dotenv');
+
+const credentials = {
+  cloud_name: process.env.name,
+  api_key: process.env.key,
+  api_secret: process.env.secret
+};
 
 const result = dotenv.config();
 if (result.error) {
@@ -17,6 +23,8 @@ if (result.error) {
 async function init() {
   await server.register(require('@hapi/inert'));
   await server.register(require('@hapi/vision'));
+
+  ImageStore.configure(credentials);
 
   server.views({
     engines: {
