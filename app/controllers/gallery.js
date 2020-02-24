@@ -39,6 +39,17 @@ const Gallery = {
       maxBytes: 209715200,
       parse: true
     }
+  },
+
+  deleteImage: {
+    handler: async function(request, h) {
+      try {
+        await ImageStore.deleteImage(request.params.id);
+        return h.redirect('/');
+      } catch (err) {
+        console.log(err);
+      }
+    }
   }
 };
 
