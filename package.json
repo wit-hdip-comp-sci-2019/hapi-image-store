@@ -5,15 +5,15 @@
   "author": "Eamonn de Leastar <edeleastar@wit.ie>",
   "license": "MIT",
   "dependencies": {
-    "@hapi/hapi": "^19.0.5",
-    "@hapi/inert": "^6.0.1",
-    "@hapi/vision": "^6.0.0",
-    "handlebars": "^4.7.3",
+    "@hapi/hapi": "^20.1.0",
+    "@hapi/inert": "^6.0.3",
+    "@hapi/vision": "^6.0.1",
+    "handlebars": "^4.7.7",
     "dotenv": "^8.2.0",
-    "cloudinary": "^1.19.0"
+    "cloudinary": "^1.25.0"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "^2.2.1"
   },
   "prettier": {
     "singleQuote": true,

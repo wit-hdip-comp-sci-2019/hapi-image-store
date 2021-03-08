@@ -6,7 +6,7 @@ Suport project for this course:
 
 - [Enterprise Web Development](https://tutors-design.netlify.com/course/wit-hdip-comp-sci-2019-ent-web-dev.netlify.com)
 
-To build, include .env file with your credentials
+To build, include .env file with your Cloudinary credentials
 
 ~~~
 name=your-cloudinary-name
